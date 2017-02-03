@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		F5305E311E43DE9000662185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E301E43DE9000662185 /* AppDelegate.swift */; };
-		F5305E331E43DE9000662185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E321E43DE9000662185 /* ViewController.swift */; };
+		F5305E331E43DE9000662185 /* WallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E321E43DE9000662185 /* WallVC.swift */; };
 		F5305E361E43DE9000662185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5305E341E43DE9000662185 /* Main.storyboard */; };
 		F5305E381E43DE9000662185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5305E371E43DE9000662185 /* Assets.xcassets */; };
 		F5305E3B1E43DE9000662185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5305E391E43DE9000662185 /* LaunchScreen.storyboard */; };
 		F5305E461E43DE9000662185 /* PerspectiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E451E43DE9000662185 /* PerspectiveTests.swift */; };
+		F5305E561E43E46F00662185 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E551E43E46F00662185 /* Constants.swift */; };
+		F5305E581E43E4D700662185 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E571E43E4D700662185 /* CategoryCell.swift */; };
+		F5305E591E43E4D700662185 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E571E43E4D700662185 /* CategoryCell.swift */; };
+		F5305E5B1E441FAA00662185 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E5A1E441FAA00662185 /* HeaderView.swift */; };
+		F5305E5C1E441FAA00662185 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E5A1E441FAA00662185 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +33,7 @@
 /* Begin PBXFileReference section */
 		F5305E2D1E43DE9000662185 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5305E301E43DE9000662185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F5305E321E43DE9000662185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5305E321E43DE9000662185 /* WallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallVC.swift; sourceTree = "<group>"; };
 		F5305E351E43DE9000662185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5305E371E43DE9000662185 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5305E3A1E43DE9000662185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +41,9 @@
 		F5305E411E43DE9000662185 /* PerspectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerspectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5305E451E43DE9000662185 /* PerspectiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveTests.swift; sourceTree = "<group>"; };
 		F5305E471E43DE9000662185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5305E551E43E46F00662185 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F5305E571E43E4D700662185 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		F5305E5A1E441FAA00662185 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +85,11 @@
 		F5305E2F1E43DE9000662185 /* Perspective */ = {
 			isa = PBXGroup;
 			children = (
+				F5305E541E43E45100662185 /* Resources */,
+				F5305E521E43DEBE00662185 /* Controller */,
+				F5305E511E43DEB800662185 /* View */,
+				F5305E501E43DEAB00662185 /* Model */,
 				F5305E301E43DE9000662185 /* AppDelegate.swift */,
-				F5305E321E43DE9000662185 /* ViewController.swift */,
 				F5305E341E43DE9000662185 /* Main.storyboard */,
 				F5305E371E43DE9000662185 /* Assets.xcassets */,
 				F5305E391E43DE9000662185 /* LaunchScreen.storyboard */,
@@ -94,6 +105,38 @@
 				F5305E471E43DE9000662185 /* Info.plist */,
 			);
 			path = PerspectiveTests;
+			sourceTree = "<group>";
+		};
+		F5305E501E43DEAB00662185 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F5305E511E43DEB800662185 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5305E571E43E4D700662185 /* CategoryCell.swift */,
+				F5305E5A1E441FAA00662185 /* HeaderView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F5305E521E43DEBE00662185 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5305E321E43DE9000662185 /* WallVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F5305E541E43E45100662185 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F5305E551E43E46F00662185 /* Constants.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5305E331E43DE9000662185 /* ViewController.swift in Sources */,
+				F5305E5B1E441FAA00662185 /* HeaderView.swift in Sources */,
+				F5305E331E43DE9000662185 /* WallVC.swift in Sources */,
 				F5305E311E43DE9000662185 /* AppDelegate.swift in Sources */,
+				F5305E561E43E46F00662185 /* Constants.swift in Sources */,
+				F5305E581E43E4D700662185 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +257,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5305E461E43DE9000662185 /* PerspectiveTests.swift in Sources */,
+				F5305E5C1E441FAA00662185 /* HeaderView.swift in Sources */,
+				F5305E591E43E4D700662185 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +458,7 @@
 				F5305E4C1E43DE9000662185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5305E4D1E43DE9000662185 /* Build configuration list for PBXNativeTarget "PerspectiveTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +467,7 @@
 				F5305E4F1E43DE9000662185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
