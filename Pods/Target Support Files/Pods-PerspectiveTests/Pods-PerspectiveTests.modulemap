@@ -1,0 +1,6 @@
+framework module Pods_PerspectiveTests {
+  umbrella header "Pods-PerspectiveTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

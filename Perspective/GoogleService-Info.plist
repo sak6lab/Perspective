@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>409601345223-ii3omdc37n86fj4pgeeieq2pm37fv7ef.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.409601345223-ii3omdc37n86fj4pgeeieq2pm37fv7ef</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDz6E3fNnoltDGSy4ZBrW7i5K9wB-PvVzI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>409601345223</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Code.Perspective</string>
+	<key>PROJECT_ID</key>
+	<string>perspective-a4588</string>
+	<key>STORAGE_BUCKET</key>
+	<string>perspective-a4588.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:409601345223:ios:e8b6343d4cd299fc</string>
+	<key>DATABASE_URL</key>
+	<string>https://perspective-a4588.firebaseio.com</string>
+</dict>
+</plist>

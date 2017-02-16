@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import FirebaseDatabase
+import UIKit
 
 let API_KEY = "cab6eede7fe24dd8b9c31dcb88d176d5"
+var ref = FIRDatabase.database().reference()
 
-enum catagories: Int{
+enum categories: Int{
     case Business = 0
     case Entertainment
     case Gaming
@@ -41,44 +44,9 @@ enum catagories: Int{
         }
     }
     
-    var colorValue: colors{
-        switch(self){
-        case .Business:
-            return colors.Papaya
-        case .Entertainment:
-            return colors.Mustard
-        case .Gaming:
-            return colors.Blush
-        case .General:
-            return colors.Aqua
-        case .Music:
-            return colors.Papaya
-        case .ScienceAndNature:
-            return colors.Mustard
-        case .Sport:
-            return colors.Blush
-        case .Technology:
-            return colors.Aqua
-        }
-    }
 }
 
-enum colors: Int{
-    case Papaya = 0
-    case Mustard
-    case Blush
-    case Aqua
-    
-    var hexValue: String{
-        switch(self){
-        case .Papaya:
-            return "E24E42"
-        case .Mustard:
-            return "#E9B000"
-        case .Blush:
-            return "#EB9E80"
-        case .Aqua:
-            return "#008f95"
-        }
-    }
-}
+let PAPAYA = UIColor(red: 226/255, green: 78/225, blue: 66/255, alpha: 1)
+let MUSTARD = UIColor(red: 223/255, green: 176/255, blue: 0, alpha: 1)
+let BLUSH = UIColor(red: 235/255, green: 110/255, blue: 128/255, alpha: 1)
+let AQUA = UIColor(red: 0, green: 143/255, blue: 129/255, alpha: 1)
