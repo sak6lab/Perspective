@@ -11,6 +11,11 @@ import FirebaseDatabase
 import UIKit
 
 let API_KEY = "cab6eede7fe24dd8b9c31dcb88d176d5"
+let language = "language=en"
+let baseURL = "https://newsapi.org/v1/"
+let sourceURL = "sources?"
+let categoryURL = "category="
+
 var ref = FIRDatabase.database().reference()
 
 enum categories: Int{

@@ -120,22 +120,21 @@
                                     <constraint firstAttribute="height" constant="70" id="rcA-fz-KoE"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S2j-Hn-aMZ">
-                                <rect key="frame" x="16" y="88" width="343" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S2j-Hn-aMZ">
+                                <rect key="frame" x="16" y="114" width="343" height="533"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dlw-NX-BND">
-                                    <size key="itemSize" width="99" height="83"/>
+                                    <size key="itemSize" width="339" height="83"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Article" id="YHy-pi-Y3u" customClass="ArticleCell" customModule="Perspective" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="99" height="83"/>
+                                        <rect key="frame" x="2" y="0.0" width="339" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="99" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="339" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="roH-M8-SAV">
@@ -158,10 +157,25 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3fA-wz-AVb">
+                                <rect key="frame" x="16" y="78" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Top"/>
+                                    <segment title="Latest"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.56078431370000004" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.86274509799999999" green="0.81568627449999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3fA-wz-AVb" firstAttribute="top" secondItem="YuA-CJ-vW7" secondAttribute="bottom" constant="8" id="6Eo-O8-9O1"/>
                             <constraint firstItem="YuA-CJ-vW7" firstAttribute="top" secondItem="n4a-oX-Bgg" secondAttribute="top" id="8MI-Jk-f2J"/>
+                            <constraint firstItem="3fA-wz-AVb" firstAttribute="trailing" secondItem="n4a-oX-Bgg" secondAttribute="trailingMargin" id="8zl-VH-cnf"/>
+                            <constraint firstItem="3fA-wz-AVb" firstAttribute="leading" secondItem="n4a-oX-Bgg" secondAttribute="leadingMargin" id="Bra-h7-L9f"/>
+                            <constraint firstItem="ogK-tN-58V" firstAttribute="top" secondItem="S2j-Hn-aMZ" secondAttribute="bottom" constant="20" id="NRC-kw-wrB"/>
+                            <constraint firstItem="S2j-Hn-aMZ" firstAttribute="trailing" secondItem="n4a-oX-Bgg" secondAttribute="trailingMargin" id="Qtt-2h-Mng"/>
+                            <constraint firstItem="S2j-Hn-aMZ" firstAttribute="leading" secondItem="n4a-oX-Bgg" secondAttribute="leadingMargin" id="Qwj-Em-cpl"/>
+                            <constraint firstItem="S2j-Hn-aMZ" firstAttribute="top" secondItem="3fA-wz-AVb" secondAttribute="bottom" constant="8" id="Zf6-Oe-ncz"/>
                             <constraint firstAttribute="trailing" secondItem="YuA-CJ-vW7" secondAttribute="trailing" id="aVy-mO-G0C"/>
                             <constraint firstItem="YuA-CJ-vW7" firstAttribute="leading" secondItem="n4a-oX-Bgg" secondAttribute="leading" id="pFY-uD-pGQ"/>
                         </constraints>
