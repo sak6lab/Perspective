@@ -11,11 +11,13 @@ import Alamofire
 
 class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
+    let SOURCECELLID = "SourceCell"
+    
     @IBOutlet weak var articleCollection: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var category: categories!
-    var articleSources: Array<Source>!
+    var articleSources = Array<Source>()
     
     override func viewDidLoad() {
         articleCollection.delegate = self
@@ -29,18 +31,35 @@ class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        if articleSources.count>0{
+            return articleSources.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = articleCollection.dequeueReusableCell(withReuseIdentifier: "Article", for: indexPath) as? ArticleCell{
+        if let cell = articleCollection.dequeueReusableCell(withReuseIdentifier: SOURCECELLID, for: indexPath) as? SourceCell{
+            let source = articleSources[indexPath.row]
+            if source.image != nil{
+                cell.configureCell(image: source.image!)
+            } else {
+                if let url = source.urlToLogos["large"] as? String{
+                    Alamofire.request(url).responseData(completionHandler: { response in
+                        if let data = response.result.value{
+                            let image = UIImage(data: data)
+                            if image != nil{
+                                source.image = image
+                                cell.configureCell(image: image!)
+                            }
+                        }
+                        
+                    })
+                }
+                
+            }
             return cell
         }
         return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
     }
     
     func getSourcesForCategory(){
@@ -49,34 +68,38 @@ class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionView
         let url = URL(string: strURL)
         Alamofire.request(url!).responseJSON { response in
             let value = response.result.value
-            if let arr = value as? Array<Dictionary<String, AnyObject>>{
-                var sources = Array<Source>()
-                for dict in arr{
-                    let source = Source()
-                    if let id = dict["id"] as? String{
-                        source.id = id
+            if let mainDict = value as? Dictionary<String, AnyObject>{
+                if let arr = mainDict["sources"] as? Array<Dictionary<String, AnyObject>>{
+                    var sources = Array<Source>()
+                    for dict in arr{
+                        let source = Source()
+                        if let id = dict["id"] as? String{
+                            source.id = id
+                        }
+                        if let name = dict["name"] as? String{
+                            source.name = name
+                        }
+                        if let desc = dict["description"] as? String{
+                            source.description = desc
+                        }
+                        if let url = dict["url"] as? String{
+                            source.url = url
+                        }
+                        if let category = dict["category"] as? String{
+                            source.category = category
+                        }
+                        if let urlsToLogos = dict["urlsToLogos"] as? Dictionary<String, AnyObject>{
+                            source.urlToLogos = urlsToLogos
+                        }
+                        if let sortBysAvailable = dict["sortBysAvailable"] as? Array<String>{
+                            source.sortsByAvailable = sortBysAvailable
+                        }
+                        sources.append(source)
                     }
-                    if let name = dict["name"] as? String{
-                        source.name = name
-                    }
-                    if let desc = dict["description"] as? String{
-                        source.description = desc
-                    }
-                    if let url = dict["url"] as? String{
-                        source.url = url
-                    }
-                    if let category = dict["category"] as? String{
-                        source.category = category
-                    }
-                    if let urlsToLogos = dict["urlsToLogos"] as? Dictionary<String, String>{
-                        source.urlToLogos = urlsToLogos
-                    }
-                    if let sortBysAvailable = dict["sortBysAvailable"] as? Array<String>{
-                        source.sortsByAvailable = sortBysAvailable
-                    }
-                    sources.append(source)
+                    self.articleSources = sources
+                    self.articleCollection.reloadData()
                 }
-                self.articleSources = sources
+
             }
         }
     }

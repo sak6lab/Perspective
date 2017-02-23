@@ -6,14 +6,18 @@
 //  Copyright © 2017 Saketh D. All rights reserved.
 //
 
+import UIKit
+
 class Source{
     private var _id: String!
     private var _name: String!
     private var _description: String!
     private var _url: String!
     private var _category: String!
-    private var _urlToLogos: Dictionary<String, String>!
+    private var _urlToLogos: Dictionary<String, AnyObject>!
     private var _sortBysAvailable: Array<String>!
+    
+    var image: UIImage?
     
     var id: String{
         get{
@@ -55,7 +59,7 @@ class Source{
             _category = newValue
         }
     }
-    var urlToLogos: Dictionary<String, String>{
+    var urlToLogos: Dictionary<String, AnyObject>{
         get{
             return _urlToLogos
         }
