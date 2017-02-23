@@ -55,3 +55,5 @@ let PAPAYA = UIColor(red: 226/255, green: 78/225, blue: 66/255, alpha: 1)
 let MUSTARD = UIColor(red: 223/255, green: 176/255, blue: 0, alpha: 1)
 let BLUSH = UIColor(red: 235/255, green: 110/255, blue: 128/255, alpha: 1)
 let AQUA = UIColor(red: 0, green: 143/255, blue: 129/255, alpha: 1)
+
+let AQUACG = AQUA.cgColor

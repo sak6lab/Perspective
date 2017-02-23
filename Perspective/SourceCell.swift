@@ -10,9 +10,11 @@ import UIKit
 
 class SourceCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var sourceView: UILabel!
     
-    func configureCell(image: UIImage){
+    func configureCell(image: UIImage, title: String){
         imageView.image = image
+        sourceView.text = title
     }
     
 }

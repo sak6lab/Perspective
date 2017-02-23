@@ -41,7 +41,7 @@ class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionView
         if let cell = articleCollection.dequeueReusableCell(withReuseIdentifier: SOURCECELLID, for: indexPath) as? SourceCell{
             let source = articleSources[indexPath.row]
             if source.image != nil{
-                cell.configureCell(image: source.image!)
+                cell.configureCell(image: source.image!, title: source.name)
             } else {
                 if let url = source.urlToLogos["large"] as? String{
                     Alamofire.request(url).responseData(completionHandler: { response in
@@ -49,7 +49,7 @@ class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionView
                             let image = UIImage(data: data)
                             if image != nil{
                                 source.image = image
-                                cell.configureCell(image: image!)
+                                cell.configureCell(image: image!, title: source.name)
                             }
                         }
                         
