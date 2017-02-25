@@ -11,10 +11,16 @@ import FirebaseDatabase
 import UIKit
 
 let API_KEY = "cab6eede7fe24dd8b9c31dcb88d176d5"
-let language = "language=en"
+let languageParamURL = "language=en"
 let baseURL = "https://newsapi.org/v1/"
 let sourceURL = "sources?"
-let categoryURL = "category="
+let categoryParamURL = "category="
+
+let articleURL = "articles?"
+let sourceParamURL = "source="
+let apiKeyParamURL = "apiKey=\(API_KEY)"
+let sortByParamURL = "sortBy="
+
 
 var ref = FIRDatabase.database().reference()
 

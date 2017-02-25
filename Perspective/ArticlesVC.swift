@@ -23,7 +23,6 @@ class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionView
         articleCollection.delegate = self
         articleCollection.dataSource = self
         getSourcesForCategory()
-        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -41,7 +40,7 @@ class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionView
         if let cell = articleCollection.dequeueReusableCell(withReuseIdentifier: SOURCECELLID, for: indexPath) as? SourceCell{
             let source = articleSources[indexPath.row]
             if source.image != nil{
-                cell.configureCell(image: source.image!, title: source.name)
+                cell.configureCell(image: source.image!, title: source.name,source: source)
             } else {
                 if let url = source.urlToLogos["large"] as? String{
                     Alamofire.request(url).responseData(completionHandler: { response in
@@ -49,22 +48,54 @@ class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionView
                             let image = UIImage(data: data)
                             if image != nil{
                                 source.image = image
-                                cell.configureCell(image: image!, title: source.name)
+                                cell.configureCell(image: image!, title: source.name,source: source)
                             }
                         }
-                        
                     })
                 }
-                
             }
             return cell
         }
         return UICollectionViewCell()
     }
     
+    func getArticleForSource(source: Source) -> Array<Article>{
+        var articlesArray = Array<Article>()
+        let strURL = "\(baseURL)\(articleURL)\(sourceParamURL)\(source.id)&\(sortByParamURL)\(segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)?.lowercased())&\(apiKeyParamURL)"
+        Alamofire.request(strURL).responseJSON{ response in
+            let value = response.result.value
+            if let mainDict = value as? Dictionary<String,AnyObject>{
+                if let articleArr  = mainDict["articles"] as? Array<Dictionary<String,AnyObject>>{
+                    for dict in articleArr{
+                        let article = Article()
+                        if let author = dict["auhtor"] as? String{
+                            article.author = author
+                        }
+                        if let title = dict["title"] as? String{
+                            article.title = title
+                        }
+                        if let description = dict["description"] as? String{
+                            article.description = description
+                        }
+                        if let url = dict["url"] as? String{
+                            article.url = url
+                        }
+                        if let urlToImage = dict["urlToImage"] as? String{
+                            article.urlToImage = urlToImage
+                        }
+                        if let publishedAt = dict["publishedAt"] as? String{
+                            article.publishedAt = publishedAt
+                        }
+                        articlesArray.append(article)
+                    }
+                }
+            }
+        }
+        return articlesArray
+    }
+    
     func getSourcesForCategory(){
-        let strURL = "\(baseURL)\(sourceURL)\(categoryURL)\(category.apiValue)&\(language)"
-        print(strURL)
+        let strURL = "\(baseURL)\(sourceURL)\(categoryParamURL)\(category.apiValue)&\(languageParamURL)"
         let url = URL(string: strURL)
         Alamofire.request(url!).responseJSON { response in
             let value = response.result.value
@@ -94,14 +125,13 @@ class ArticlesVC: UIViewController, UICollectionViewDataSource, UICollectionView
                         if let sortBysAvailable = dict["sortBysAvailable"] as? Array<String>{
                             source.sortsByAvailable = sortBysAvailable
                         }
+                        source.articles = self.getArticleForSource(source: source)
                         sources.append(source)
                     }
                     self.articleSources = sources
                     self.articleCollection.reloadData()
                 }
-
             }
         }
     }
-
 }

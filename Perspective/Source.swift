@@ -18,6 +18,7 @@ class Source{
     private var _sortBysAvailable: Array<String>!
     
     var image: UIImage?
+    var articles: Array<Article>?
     
     var id: String{
         get{
