@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import WebKit
 
-class ArticleViewerVC: UIViewController {
-
+class ArticleViewerVC: UIViewController, WKNavigationDelegate{
+    
+    @IBOutlet weak var wkView: UIView!
+    
+    var article: Article!
+    var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let url = NSURL(string: article.url)
+        let request = NSURLRequest(url: url! as URL)
+        
+        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: wkView.frame.width, height: wkView.frame.height))
+        webView.navigationDelegate = self
+        webView.load(request as URLRequest)
+        wkView.addSubview(webView)
     }
 
 }

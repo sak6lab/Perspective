@@ -118,7 +118,7 @@
                                     <action selector="segmentChangedWithSender:" destination="4Hd-8M-UaU" eventType="valueChanged" id="NHh-IZ-7S2"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="246" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hE6-LX-5lA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="246" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hE6-LX-5lA">
                                 <rect key="frame" x="16" y="114" width="343" height="533"/>
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.81568627449999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -254,7 +254,7 @@
         <!--Viewer-->
         <scene sceneID="1At-SS-bGz">
             <objects>
-                <viewController id="uPs-Vb-WWH" customClass="ArticleViewerVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AVVC" id="uPs-Vb-WWH" customClass="ArticleViewerVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xvt-i0-CXr"/>
                         <viewControllerLayoutGuide type="bottom" id="JRp-Xp-3YT"/>
@@ -271,21 +271,32 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="O9s-ue-YcR"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3m-fN-jqB">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OKc-Tq-LSk" firstAttribute="top" secondItem="nR4-I2-qMY" secondAttribute="top" id="5k5-j4-a5g"/>
+                            <constraint firstItem="x3m-fN-jqB" firstAttribute="top" secondItem="OKc-Tq-LSk" secondAttribute="bottom" constant="2" id="9Sn-X9-dwN"/>
                             <constraint firstAttribute="trailing" secondItem="OKc-Tq-LSk" secondAttribute="trailing" id="TEz-xr-TrM"/>
+                            <constraint firstItem="JRp-Xp-3YT" firstAttribute="top" secondItem="x3m-fN-jqB" secondAttribute="bottom" id="Zwx-VF-2dJ"/>
+                            <constraint firstItem="x3m-fN-jqB" firstAttribute="leading" secondItem="nR4-I2-qMY" secondAttribute="leading" id="bcc-UW-buJ"/>
+                            <constraint firstAttribute="trailing" secondItem="x3m-fN-jqB" secondAttribute="trailing" id="wvW-gJ-QX4"/>
                             <constraint firstItem="OKc-Tq-LSk" firstAttribute="leading" secondItem="nR4-I2-qMY" secondAttribute="leading" id="ytU-kB-Rtb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Viewer" id="nsP-En-TgV">
                         <barButtonItem key="backBarButtonItem" title="Back" id="BRg-9S-qUF"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="wkView" destination="x3m-fN-jqB" id="m3u-Nu-f1w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vb-1P-nsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="-4"/>
+            <point key="canvasLocation" x="1992.8" y="-4.0479760119940034"/>
         </scene>
         <!--Perspective-->
         <scene sceneID="dqp-Od-tqg">

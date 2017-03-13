@@ -74,4 +74,20 @@ extension ArticlesVC: UICollectionViewDataSource, UICollectionViewDelegate{
         }
         return ArticleCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let source = articleSources[collectionView.tag]
+        var article: Article!
+        if source.mode!{
+            article = source.topArticles![indexPath.row]
+        } else {
+            article = source.latestArticles![indexPath.row]
+        }
+        
+        let articleViewerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AVVC") as! ArticleViewerVC
+        articleViewerVC.article = article
+        self.navigationController?.pushViewController(articleViewerVC, animated: true)
+        
+
+    }
 }

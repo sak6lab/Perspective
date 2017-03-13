@@ -81,8 +81,5 @@ class WallVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         categoriesTable.deselectRow(at: indexPath, animated: true)
         self.navigationController?.pushViewController(articlesVC, animated: true)
     }
-    
-    
-    
 }
 
