@@ -14,11 +14,14 @@ class Source{
     private var _description: String!
     private var _url: String!
     private var _category: String!
-    private var _urlToLogos: Dictionary<String, AnyObject>!
+    private var _urlToLogos: Dictionary<String, String>!
     private var _sortBysAvailable: Array<String>!
     
     var image: UIImage?
-    var articles: Array<Article>?
+    var topArticles: Array<Article>?
+    var latestArticles: Array<Article>?
+    
+    var mode: Bool?
     
     var id: String{
         get{
@@ -60,7 +63,7 @@ class Source{
             _category = newValue
         }
     }
-    var urlToLogos: Dictionary<String, AnyObject>{
+    var urlToLogos: Dictionary<String, String>{
         get{
             return _urlToLogos
         }

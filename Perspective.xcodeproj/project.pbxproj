@@ -22,8 +22,10 @@
 		F5305E591E43E4D700662185 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E571E43E4D700662185 /* CategoryCell.swift */; };
 		F5305E5B1E441FAA00662185 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E5A1E441FAA00662185 /* HeaderView.swift */; };
 		F5305E5C1E441FAA00662185 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E5A1E441FAA00662185 /* HeaderView.swift */; };
+		F538624F1E6F3D1000389870 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538624E1E6F3D1000389870 /* ArticleCell.swift */; };
 		F5A5E55A1E5E71D2000635C0 /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5E5591E5E71D2000635C0 /* SourceCell.swift */; };
 		F5AF7F441E61C96F005EEC7E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF7F431E61C96F005EEC7E /* Article.swift */; };
+		F5B3FAB71E7226AE00226638 /* ArticleViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FAB61E7226AE00226638 /* ArticleViewerVC.swift */; };
 		F5C70DDF1E5B5B910038CF59 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C70DDE1E5B5B910038CF59 /* Source.swift */; };
 		F5D4B9101E49521900088EC8 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4B90F1E49521900088EC8 /* Frequency.swift */; };
 /* End PBXBuildFile section */
@@ -59,9 +61,11 @@
 		F5305E551E43E46F00662185 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5305E571E43E4D700662185 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		F5305E5A1E441FAA00662185 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F538624E1E6F3D1000389870 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		F58C3456D1FB110E2D119865 /* Pods_Perspective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Perspective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A5E5591E5E71D2000635C0 /* SourceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
 		F5AF7F431E61C96F005EEC7E /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		F5B3FAB61E7226AE00226638 /* ArticleViewerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewerVC.swift; sourceTree = "<group>"; };
 		F5C70DDE1E5B5B910038CF59 /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		F5D4B90F1E49521900088EC8 /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +172,7 @@
 				F5305E5A1E441FAA00662185 /* HeaderView.swift */,
 				F5305E571E43E4D700662185 /* CategoryCell.swift */,
 				F5A5E5591E5E71D2000635C0 /* SourceCell.swift */,
+				F538624E1E6F3D1000389870 /* ArticleCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				F5305E321E43DE9000662185 /* WallVC.swift */,
 				F5248B471E53BE2600AD18C6 /* ArticlesVC.swift */,
+				F5B3FAB61E7226AE00226638 /* ArticleViewerVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -400,10 +406,12 @@
 				F5248B481E53BE2600AD18C6 /* ArticlesVC.swift in Sources */,
 				F5305E331E43DE9000662185 /* WallVC.swift in Sources */,
 				F5D4B9101E49521900088EC8 /* Frequency.swift in Sources */,
+				F5B3FAB71E7226AE00226638 /* ArticleViewerVC.swift in Sources */,
 				F5C70DDF1E5B5B910038CF59 /* Source.swift in Sources */,
 				F5305E311E43DE9000662185 /* AppDelegate.swift in Sources */,
 				F5305E561E43E46F00662185 /* Constants.swift in Sources */,
 				F5305E581E43E4D700662185 /* CategoryCell.swift in Sources */,
+				F538624F1E6F3D1000389870 /* ArticleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

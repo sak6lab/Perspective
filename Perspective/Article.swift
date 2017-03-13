@@ -5,6 +5,7 @@
 //  Created by Saketh D on 2/25/17.
 //  Copyright © 2017 Saketh D. All rights reserved.
 //
+import UIKit
 
 class Article{
     private var _author: String!
@@ -13,6 +14,8 @@ class Article{
     private var _url: String!
     private var _urlToImage: String!
     private var _publishedAt: String!
+    
+    var image: UIImage?
     
     var author: String{
         get{
@@ -48,7 +51,10 @@ class Article{
     }
     var urlToImage: String{
         get{
-            return _urlToImage
+            if _urlToImage != nil{
+                return _urlToImage
+            }
+            return ""
         }
         set{
             _urlToImage = newValue
@@ -62,5 +68,4 @@ class Article{
             _publishedAt = newValue
         }
     }
-    
 }
