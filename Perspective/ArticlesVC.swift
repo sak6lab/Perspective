@@ -95,6 +95,7 @@ class ArticlesVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                                 let data = response.data
                                 if data != nil{
                                     article.image = UIImage(data: data!)
+                                    self.sourceTableView.reloadData()
                                 }
                             })
                         }
@@ -112,7 +113,6 @@ class ArticlesVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                     source.mode = false
                 }
             }
-            self.sourceTableView.reloadData()
         }
     }
     
@@ -151,7 +151,6 @@ class ArticlesVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
                         sources.append(source)
                     }
                     self.articleSources = sources
-                    self.sourceTableView.reloadData()
                 }
             }
         }

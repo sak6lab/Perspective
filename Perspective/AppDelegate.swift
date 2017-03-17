@@ -10,12 +10,33 @@ import UIKit
 import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let INIT_KEY: String = "initkey"
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let defaults = UserDefaults.standard
+        let isInit: Bool? = defaults.bool(forKey: INIT_KEY)
+        var viewControllerID: String!
+        
+        if isInit == false{
+            viewControllerID = "VC"
+            defaults.set(true, forKey: INIT_KEY)
+        } else {
+            viewControllerID = "NCVC"
+        }
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: viewControllerID)
+        
+        self.window?.rootViewController = initialViewController
+        
+        self.window?.makeKeyAndVisible()
+        
         FIRApp.configure()
         return true
     }

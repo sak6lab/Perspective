@@ -59,17 +59,20 @@ extension ArticlesVC: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ARTICLECELLID, for: indexPath) as? ArticleCell{
             let source = articleSources[collectionView.tag]
+            
+            var article: Article!
             if source.mode!{
-                let article = source.topArticles![indexPath.row]
-                if article.image != nil{
-                    cell.configureCell(image: article.image!, title: article.title)
-                }
+                article = source.topArticles![indexPath.row]
             } else {
-                let article = source.latestArticles![indexPath.row]
-                if article.image != nil{
-                    cell.configureCell(image: article.image!, title: article.title)
-                }
+                article = source.latestArticles![indexPath.row]
             }
+            
+            if article.image != nil{
+                cell.configureCell(image: article.image!, title: article.title)
+            } else {
+                cell.configureCell(image: #imageLiteral(resourceName: "default"), title: article.title)
+            }
+            
             return cell
         }
         return ArticleCell()
@@ -77,6 +80,7 @@ extension ArticlesVC: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let source = articleSources[collectionView.tag]
+        
         var article: Article!
         if source.mode!{
             article = source.topArticles![indexPath.row]
@@ -87,7 +91,5 @@ extension ArticlesVC: UICollectionViewDataSource, UICollectionViewDelegate{
         let articleViewerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AVVC") as! ArticleViewerVC
         articleViewerVC.article = article
         self.navigationController?.pushViewController(articleViewerVC, animated: true)
-        
-
     }
 }

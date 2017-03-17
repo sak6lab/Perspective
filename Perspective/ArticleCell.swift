@@ -13,9 +13,11 @@ class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var articleImage: UIImageView!
     @IBOutlet weak var articleTitle: UILabel!
     
-    func configureCell(image: UIImage, title: String){
-        articleImage.image = image
-        articleImage.clipsToBounds = true
+    func configureCell(image: UIImage?, title: String){
+        if image != nil {
+            articleImage.image = image
+            articleImage.clipsToBounds = true
+        }
         articleTitle.text = title
     }
     
