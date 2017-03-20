@@ -55,6 +55,26 @@ enum categories: Int{
         }
     }
     
+    var imageValue: UIImage{
+        switch(self){
+        case .Business:
+            return #imageLiteral(resourceName: "Business")
+        case .Entertainment:
+            return #imageLiteral(resourceName: "Entertainment")
+        case .Gaming:
+            return #imageLiteral(resourceName: "Gaming")
+        case .General:
+            return #imageLiteral(resourceName: "General")
+        case .Music:
+            return #imageLiteral(resourceName: "Music")
+        case .ScienceAndNature:
+            return #imageLiteral(resourceName: "Science-And-Nature")
+        case .Sport:
+            return #imageLiteral(resourceName: "Sports")
+        case .Technology:
+            return #imageLiteral(resourceName: "Technology")
+        }
+    }
 }
 
 let PAPAYA = UIColor(red: 226/255, green: 78/225, blue: 66/255, alpha: 1)

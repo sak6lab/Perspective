@@ -12,6 +12,7 @@ import FirebaseDatabase
 class CategoryCell: UITableViewCell {
     
     @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var iconView: UIImageView!
     
     override func awakeFromNib() {
         self.layer.cornerRadius = 2.0
@@ -29,6 +30,8 @@ class CategoryCell: UITableViewCell {
         var text = title.apiValue.capitalized
         text = text.replacingOccurrences(of: "-", with: " ")
         genreLabel.text = text
+        
+        iconView.image = title.imageValue
     }
     
 }

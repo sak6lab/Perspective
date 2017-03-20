@@ -13,6 +13,11 @@ class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var articleImage: UIImageView!
     @IBOutlet weak var articleTitle: UILabel!
     
+    override func awakeFromNib() {
+        articleImage.layer.cornerRadius = 2.0
+        articleImage.clipsToBounds = true
+    }
+    
     func configureCell(image: UIImage?, title: String){
         if image != nil {
             articleImage.image = image

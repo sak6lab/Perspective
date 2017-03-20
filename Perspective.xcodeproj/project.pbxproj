@@ -10,6 +10,7 @@
 		55DB52ED9D7B85F48FA7B383 /* Pods_PerspectiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD25E653AE674D30D24836D /* Pods_PerspectiveTests.framework */; };
 		913CF0FBECB8F5262B4A3BB3 /* Pods_Perspective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F58C3456D1FB110E2D119865 /* Pods_Perspective.framework */; };
 		F51309761E49477900648F67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F51309751E49477900648F67 /* GoogleService-Info.plist */; };
+		F52031EA1E7F1854004412B4 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52031E91E7F1854004412B4 /* NextButton.swift */; };
 		F5248B481E53BE2600AD18C6 /* ArticlesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5248B471E53BE2600AD18C6 /* ArticlesVC.swift */; };
 		F5305E311E43DE9000662185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E301E43DE9000662185 /* AppDelegate.swift */; };
 		F5305E331E43DE9000662185 /* WallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5305E321E43DE9000662185 /* WallVC.swift */; };
@@ -47,6 +48,7 @@
 		A772338C0674AE8A5E43E891 /* Pods-Perspective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Perspective.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Perspective/Pods-Perspective.debug.xcconfig"; sourceTree = "<group>"; };
 		E2CDB0E33FAAB30300D92E1C /* Pods-Perspective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Perspective.release.xcconfig"; path = "Pods/Target Support Files/Pods-Perspective/Pods-Perspective.release.xcconfig"; sourceTree = "<group>"; };
 		F51309751E49477900648F67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F52031E91E7F1854004412B4 /* NextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		F5248B471E53BE2600AD18C6 /* ArticlesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesVC.swift; sourceTree = "<group>"; };
 		F5305E2D1E43DE9000662185 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5305E301E43DE9000662185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				F5305E571E43E4D700662185 /* CategoryCell.swift */,
 				F5A5E5591E5E71D2000635C0 /* SourceCell.swift */,
 				F538624E1E6F3D1000389870 /* ArticleCell.swift */,
+				F52031E91E7F1854004412B4 /* NextButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F52031EA1E7F1854004412B4 /* NextButton.swift in Sources */,
 				F5AF7F441E61C96F005EEC7E /* Article.swift in Sources */,
 				F5A5E55A1E5E71D2000635C0 /* SourceCell.swift in Sources */,
 				F5305E5B1E441FAA00662185 /* HeaderView.swift in Sources */,

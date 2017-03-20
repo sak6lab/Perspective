@@ -12,9 +12,11 @@ import WebKit
 class ArticleViewerVC: UIViewController, WKNavigationDelegate{
     
     @IBOutlet weak var wkView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var article: Article!
     var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +26,13 @@ class ArticleViewerVC: UIViewController, WKNavigationDelegate{
         webView = WKWebView(frame: CGRect(x: 0, y: 0, width: wkView.frame.width, height: wkView.frame.height))
         webView.navigationDelegate = self
         webView.load(request as URLRequest)
+        activityIndicator.startAnimating()
         wkView.addSubview(webView)
     }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
+    }
+    
 
 }
