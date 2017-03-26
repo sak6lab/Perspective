@@ -17,7 +17,7 @@ class ArticlesVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var sourceTableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    var category: categories!
+    var category: Category!
     var articleSources = Array<Source>()
     
     var storedOffsets = Dictionary<Int,CGFloat>()
@@ -117,7 +117,7 @@ class ArticlesVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     }
     
     func getSourcesForCategory(){
-        let strURL = "\(baseURL)\(sourceURL)\(categoryParamURL)\(category.apiValue)&\(languageParamURL)"
+        let strURL = "\(baseURL)\(sourceURL)\(categoryParamURL)\(category.cat.apiValue)&\(languageParamURL)"
         let url = URL(string: strURL)
         Alamofire.request(url!).responseJSON { response in
             let value = response.result.value
